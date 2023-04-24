@@ -1,0 +1,207 @@
+html{
+    font-family: 'Anuphan', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1e4040;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.4);
+    /* Resize */
+    max-width: 100%;
+}
+i:hover{
+    cursor: pointer;
+}
+/* Begin */
+.outer-grid{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 90px 1fr;
+    grid-template-areas:
+      "alias-header alias-header"
+      "alias-innergrid alias-innergrid";
+}
+/* Toggle that nav */
+.outer-grid-expanded {
+    grid-template-areas: "alias-header alias-header" 
+    "alias-nav alias-innergrid";
+}
+
+nav{
+    grid-area: alias-nav;
+    padding-top: 20px;
+    border-right: 1px solid rgb(0,0,0,0.1);
+}
+.hider{
+    display: none;
+}
+/* Inner-grid */
+.inner-grid{
+    grid-area: alias-innergrid;
+    display: grid;
+    
+    /* Leave the nav and top bar out */
+    overflow: scroll;
+    grid-template-areas: "alias-main alias-main"
+    "alias-aside alias-aside"
+    "alias-footer alias-footer";
+    grid-template-rows: 1fr auto 70px;
+    grid-template-columns: 1fr;
+}
+main{
+    grid-area: alias-main;
+    /* margin: 10px; */
+    padding: 20px 5%;
+    border: 1px solid rgb(0,0,0,0.1);
+}
+aside{
+    grid-area: alias-aside;
+    padding: 20px 5%;
+    height: auto;
+}
+footer{
+    grid-area: alias-footer;
+    background-color: #1e4040;
+    color: #71d99e;
+    text-align: center;
+}
+
+/* 
+================================
+BREAKPOINTS
+================================
+*/
+/* Viewport setting */
+@media (min-width: 576px){
+    nav{
+        display: block !important;
+    }
+    .outer-grid{
+        grid-template-areas: "alias-header alias-header" 
+        "alias-nav alias-innergrid";
+    }
+    .fa-bars{
+        display: none;
+    }
+}
+@media (min-width: 992px){
+    .inner-grid{
+        grid-template-rows: 1fr 50px;
+        grid-template-columns: minmax(auto,700px) 1fr;
+        grid-template-areas: "alias-main alias-aside"
+        "alias-footer alias-footer";
+    }
+    aside{
+        height: auto;
+        border: none;
+    }
+    
+}
+
+/* Layout customized: nav */
+.nav-link{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:15px;
+}
+a {
+    text-decoration: none;
+    color: #1e4040;
+}
+
+/* Layout customized: header */
+header{
+    grid-area: alias-header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #1e4040;
+    color: #71d99e;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    
+}
+.header-right{
+    display: flex;
+    align-items: flex-end;
+}
+.header-right i{
+    margin-left: 20px;
+}
+header h1 {
+    font-size: 1.5rem;
+    margin-left: 50px;
+}
+
+
+/* Layout customized: main */
+article a {
+    text-decoration: none;
+    color: #71d99e;
+}
+/* Pull nav into right-side */
+@media (min-width:1440px) {
+    nav {
+        grid-area: alias-nav;
+        display: flex !important;
+        align-items: flex-end;
+        flex-direction: column;
+        padding-right: 15px;
+    }
+    .outer-grid{
+        grid-template-columns: 1fr 950px 1fr;
+        grid-template-areas: "alias-header alias-header alias-header" 
+        "alias-nav alias-innergrid alias-innergrid";
+    }
+}
+
+/* 
+================================
+COLLAGE
+================================
+*/
+.collage{
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr 40px 1fr;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+/* In one row */
+.collage *{
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.collage-1{
+    grid-column-start:1;
+    grid-column-end: 3;
+    z-index:1;
+    transform: rotate(-15deg);
+}
+.collage-2{
+    grid-column-start:2;
+    grid-column-end: 5;
+    z-index:2;
+}
+.collage-3{
+    grid-column-start:4;
+    grid-column-end: 6;
+    z-index:1;
+    transform: rotate(15deg);
+}
