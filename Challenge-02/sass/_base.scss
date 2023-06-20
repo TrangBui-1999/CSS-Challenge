@@ -1,0 +1,56 @@
+// import google font
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+/* reset styles */
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f1f3ec;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted #efefef;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  a {
+    color: red;
+  }
+}
+
+h1 {
+  font-weight: 600;
+}
+button {
+  background-color: $primary;
+  color: $secondary;
+  border-radius: $base-border-radius;
+  min-height: 40px;
+  min-width: 100px;
+  border: none;
+}
+button:hover {
+  box-shadow: $box-shadow;
+}
+.logo {
+  font-family: "Bagel Fat One", cursive;
+}
