@@ -1,0 +1,17 @@
+<svg width="94" height="62" viewBox="0 0 94 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector" filter="url(#filter0_d_63_1040)">
+<path d="M70.4286 49.2833C72.5097 49.2894 74.5682 48.8518 76.4669 47.9997C78.3656 47.1476 80.0608 45.9006 81.4396 44.3418C82.8184 42.7829 83.8491 40.9481 84.4629 38.9596C85.0768 36.971 85.2597 34.8745 84.9995 32.8097C84.7393 30.7449 84.042 28.7593 82.954 26.9853C81.866 25.2112 80.4123 23.6894 78.6899 22.5214C76.9674 21.3534 75.0158 20.5659 72.9651 20.2115C70.9144 19.8571 68.8117 19.9439 66.7971 20.4661C65.6263 16.1109 63.052 12.2632 59.473 9.51925C55.8939 6.77527 51.5099 5.28809 47 5.28809C42.4901 5.28809 38.1061 6.77527 34.527 9.51925C30.948 12.2632 28.3737 16.1109 27.2029 20.4661C25.1883 19.9439 23.0856 19.8571 21.0349 20.2115C18.9842 20.5659 17.0326 21.3534 15.3101 22.5214C13.5877 23.6894 12.1341 25.2112 11.0461 26.9853C9.95806 28.7593 9.26072 30.7449 9.00052 32.8097C8.74032 34.8745 8.92325 36.971 9.5371 38.9596C10.1509 40.9481 11.1816 42.7829 12.5604 44.3418C13.9392 45.9006 15.6345 47.1476 17.5331 47.9997C19.4318 48.8518 21.4903 49.2894 23.5714 49.2833H70.4286Z" stroke="#2CE6FF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"/>
+</g>
+<defs>
+<filter id="filter0_d_63_1040" x="0.38562" y="0.788086" width="93.2288" height="60.9953" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_63_1040"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_63_1040" result="shape"/>
+</filter>
+</defs>
+</svg>
