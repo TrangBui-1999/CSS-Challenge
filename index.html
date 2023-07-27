@@ -4,170 +4,179 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link type="text/css" rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>CSS Display</title>
   </head>
   <body>
     <header></header>
 
+    <div id="openMenu" class="sideNav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+        <img src="./image/Out.svg" style="cursor: pointer"
+      /></a>
+      <div class="menu">
+        <img src="./image/Avatar.png" alt="Account Avatar" class="avatar" />
+        <button class="button btn-primary">
+          <img src="./image/StarIcon.svg" alt="Start Icon" />
+          Edit Profile
+        </button>
+
+        <div class="menu-middle">
+          <div class="menu-item">
+            <img src="./image/dash-board.svg" alt="" />
+            <h2>Dashboard</h2>
+          </div>
+
+          <div class="menu-item">
+            <img src="./image/location.svg" alt="" />
+            <h2>Location</h2>
+          </div>
+
+          <div class="menu-item">
+            <img src="./image/schedule.svg" alt="" />
+            <h2>Schedule</h2>
+          </div>
+
+          <div class="menu-item">
+            <img src="./image/setting.svg" alt="" />
+            <h2>Setting</h2>
+          </div>
+
+          <div class="menu-item menu-bottom">
+            <img src="./image/log-out.svg" alt="" />
+            <h2>Log out</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV -->
     <nav>
-      <div id="openMenu" class="sideNav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;</a
-        >
-        <div class="menu">
-          <img src="./image/Avatar.png" alt="Account Avatar" class="avatar" />
-          <button class="button btn-primary">
-            <img src="./image/StarIcon.svg" alt="Start Icon" />
-            Edit Profile
-          </button>
+      <ul class="nav-row">
+        <li class="profile">
+          <img
+            src="./image/menu.svg"
+            style="cursor: pointer"
+            onclick="openNav()" />
+        </li>
+        <li class="item"><a href="#">Today</a></li>
+        <li class="item"><a href="#">This week</a></li>
+        <li class="item"><a href="#">This month</a></li>
 
-          <div class="menu-middle">
-            <div class="menu-item">
-              <img src="./image/dash-board.svg" alt="" />
-              <h2>Dashboard</h2>
-            </div>
-
-            <div class="menu-item">
-              <img src="./image/location.svg" alt="" />
-              <h2>Location</h2>
-            </div>
-
-            <div class="menu-item">
-              <img src="./image/schedule.svg" alt="" />
-              <h2>Schedule</h2>
-            </div>
-
-            <div class="menu-item">
-              <img src="./image/setting.svg" alt="" />
-              <h2>Setting</h2>
-            </div>
-
-            <div class="menu-item menu-bottom">
-              <img src="./image/log-out.svg" alt="" />
-              <h2>Log out</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARDS -->
-      <div class="nav-items-sm">
-        <img
-          src="./image/menu.svg"
-          style="width: 32px; height: 32px; cursor: pointer"
-          onclick="openNav()" />
-        <div
-          class="glass-material"
-          style="padding: 10px; border-radius: 10px; gap: 10px">
-          <a href="#">Today</a>
-          <a href="#">This week</a>
-          <a href="#">This month</a>
-        </div>
-      </div>
-      <div class="search glass-material">
-        <input type="text" placeholder="Search cities ..." />
-        <img
-          src="./image/search.svg"
-          alt=""
-          style="width: 32px; height: 32px" />
-      </div>
+        <li class="search glass-material">
+          <input
+            type="text"
+            placeholder="Search cities ..."
+            style="width: 200px" />
+          <img src="./image/search.svg" alt="" />
+        </li>
+        <li class="toggle">
+          <img
+            src="./image/Menu.png"
+            alt="Open submenu"
+            style="cursor: pointer" />
+        </li>
+      </ul>
     </nav>
+    <!-- END NAV -->
 
-    <main>
-      <div class="cards">
-        <div class="card glass-material position-1">
-          <div class="card-title"></div>
-          <div class="card-image">
-            <img src="./image/IconWeatherToday.png" alt="Cloudy" />
-          </div>
-          <div class="card-info">
-            <h1>
-              It’s going to <span style="color: #2ce6ff">Rain</span> today
-            </h1>
-            <h2>C: 31 T:23</h2>
-            <p>Rainning from 17:00 - 20:00</p>
-          </div>
+    <main class="container">
+      <!-- CARDS -->
+
+      <div class="card glass-material">
+        <div class="card-title"></div>
+        <div class="card-image">
+          <img src="./image/IconWeatherToday.png" alt="Cloudy" />
         </div>
-
-        <!--  -->
-        <div class="card glass-material position-4">
-          <div class="card-title"></div>
-          <div class="card-image">
-            <img src="./image/cloudy.png" alt="Cloudy" />
-          </div>
-          <div class="card-info">
-            <h1>Tomorrow will be <span style="color: #faff0f">Windy</span></h1>
-            <h2>C: 31 T:23</h2>
-            <p>Windy from 6:00 - 12:00</p>
-          </div>
-        </div>
-
-        <!--  -->
-        <div class="card glass-material position-3">
-          <div class="card-title"></div>
-          <div class="card-image">
-            <img src="./image/clock.svg" alt="Cloudy" />
-          </div>
-          <div class="card-info">
-            <h1 style="color: #2ce6ff; justify-self: center">12:00 PM</h1>
-            <h2>
-              Good afternoon, remember to bring your
-              <span style="color: #280a81">umbrella </span>.
-            </h2>
-          </div>
-        </div>
-
-        <!--  -->
-        <div class="card-overflow position-2">
-          <div class="card-mini glass-material">
-            <div class="card-image">
-              <img src="./image/prep.svg" alt="Icon" />
-            </div>
-            <div class="card-info">
-              <h2>Precipitation</h2>
-              <h2>80%</h2>
-            </div>
-          </div>
-          <!--  -->
-          <div class="card-mini glass-material">
-            <div class="card-image">
-              <img src="./image/wind.svg" alt="Icon" />
-            </div>
-            <div class="card-info">
-              <h2>Wind</h2>
-              <h2>7 mph</h2>
-            </div>
-          </div>
-          <!--  -->
-          <!--  -->
-          <div class="card-mini glass-material">
-            <div class="card-image">
-              <img src="./image/UV.svg" alt="Icon" />
-            </div>
-            <div class="card-info">
-              <h2>UV Index</h2>
-              <h2>5</h2>
-            </div>
-          </div>
-          <!--  -->
-          <!--  -->
-          <div class="card-mini glass-material">
-            <div class="card-image">
-              <img src="./image/humid.svg" alt="Icon" />
-            </div>
-            <div class="card-info">
-              <h2>Humidity</h2>
-              <h2>50 %</h2>
-            </div>
-          </div>
-          <!--  -->
-        </div>
-
-        <!--  -->
-        <div class="card position-5" style="padding: 20px">
-          <img src="./image/sampleimgae.png" alt="Cloudy" />
+        <div class="card-info">
+          <h1>It’s going to <span style="color: #2ce6ff">Rain</span> today</h1>
+          <h2>C: 31 T:23</h2>
+          <p>Rainning from 17:00 - 20:00</p>
         </div>
       </div>
+
+      <!-- UV INDEX -->
+      <div class="card row-card">
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/prep.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>Precipitation</h2>
+            <h2>80%</h2>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/wind.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>Wind</h2>
+            <h2>7 mph</h2>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/UV.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>UV Index</h2>
+            <h2>5</h2>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/humid.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>Humidity</h2>
+            <h2>50 %</h2>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+      <!-- END UV INDEX -->
+
+      <!-- CLOCK -->
+      <div class="card glass-material">
+        <div class="card-title"></div>
+        <div class="card-image">
+          <img src="./image/clock.svg" alt="Cloudy" />
+        </div>
+        <div class="card-info">
+          <h1 style="color: #2ce6ff; justify-self: center">12:00 PM</h1>
+          <h2>
+            Good afternoon, remember to bring your
+            <span style="color: #280a81">umbrella </span>.
+          </h2>
+        </div>
+      </div>
+      <!-- CLOCK -->
+
+      <div class="card">
+        <img src="./image/sampleimgae.png" alt="Cloudy" />
+      </div>
+
+      <!-- TOMORROW  -->
+      <div class="card glass-material">
+        <div class="card-title"></div>
+        <div class="card-image">
+          <img src="./image/cloudy.png" alt="Cloudy" />
+        </div>
+        <div class="card-info">
+          <h1>Tomorrow will be <span style="color: #faff0f">Windy</span></h1>
+          <h2>C: 31 T:23</h2>
+          <p>Windy from 6:00 - 12:00</p>
+        </div>
+      </div>
+      <!-- END TOMORROW  -->
     </main>
     <!-- <div class="circle1"></div>
     <div class="circle2"></div> -->
