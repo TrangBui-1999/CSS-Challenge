@@ -4,7 +4,7 @@
 :root {
   --boxshadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
   --metric-box-spacing: 0.5em;
-  --metric-radius: 1.2em;
+  --metric-radius: 15px;
   --color-primary: linear-gradient(
     to right bottom,
     #4e4174,
@@ -25,8 +25,8 @@
   --btn-quaternary: #cf5eb0;
   --glass-shadow: linear-gradient(
     to right bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1)
   );
   --text-color: #ffffff;
   --text-color-dark: #000000;
@@ -55,13 +55,6 @@ input {
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -105,7 +98,7 @@ body {
 /* Make images easier to work with */
 img,
 picture {
-  zoom: 2;
+  zoom: 1;
   display: block;
   margin: auto;
 
@@ -132,7 +125,7 @@ nav {
   flex: 1;
   border-radius: var(--metric-radius);
   max-width: 300px;
-  padding: 10px;
+  padding: 5px;
   display: flex;
 }
 /* Mobile menu */
@@ -176,9 +169,9 @@ footer {
   grid-area: c;
 }
 .container {
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(auto, 1fr);
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* Material (background color, glass, circle glass */
@@ -291,35 +284,36 @@ div#openMenu {
 
 /* CARD */
 .card {
-  padding: 10px;
   border-radius: var(--metric-radius);
   box-shadow: var(--generic-shadow);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .row-card {
-  flex-direction: row;
-  overflow-x: scroll;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  border-radius: var(--metric-radius);
+}
+.row-card .border {
   border: solid white 5px;
+  overflow-x: scroll;
 }
 .card-mini {
   display: flex;
-  min-width: 250px;
-  min-height: 250px;
+  min-height: 100%;
   flex-direction: column;
   padding: var(--metric-box-spacing);
   border-radius: var(--metric-radius);
   box-shadow: var(--generic-shadow);
   justify-content: center;
+  align-items: center;
 }
 .card-info {
   text-align: center;
 }
-.card:nth-child(4) > img {
+.card:nth-child(5) > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -331,9 +325,182 @@ h3,
 p {
   margin: 0;
 }
-@media (min-width: 969px) {
+
+/* Mobile: default */
+.profile > img {
+  order: -1;
+  width: 24px;
+  height: 24px;
+}
+.toggle > img {
+  order: -1;
+  width: 24px;
+  height: 24px;
+}
+.card-image {
+  width: 60%;
+}
+@media (max-width: 319px) {
+  .search {
+    order: 4;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .row-card {
+    overflow-x: scroll;
+  }
+  .card-mini {
+    min-width: 120px;
+    min-height: 150px;
+  }
+}
+
+h1,
+h2 {
+  font-size: var(--font-size-small);
+}
+
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  img {
+    zoom: 2;
+  }
+  h1,
+  h2 {
+    font-size: var(--font-size-small);
+  }
+  .profile > img {
+    order: -1;
+    width: 34px;
+    height: 34px;
+  }
   img {
     zoom: 1;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    height: 100vh;
+  }
+  .row-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    border-radius: var(--metric-radius);
+  }
+  .card:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .card:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .card:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 2/4;
+  }
+  .card:nth-child(4) {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  .card:nth-child(5) {
+    display: none;
+  }
+  .card {
+    flex-direction: column;
+  }
+  .card-mini > .card-image > img {
+    height: 50px;
+  }
+
+  .card-info {
+    padding: var(--metric-box-spacing);
+  }
+}
+/* Laptop */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  img {
+    zoom: 2;
+  }
+  h1,
+  h2 {
+    font-size: var(--font-size-medium);
+  }
+  .search > img {
+    order: -1;
+    width: 24px;
+    height: 24px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+
+  .card:nth-child(1) {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+  .card:nth-child(2) {
+    grid-column: 4/6;
+    grid-row: 1/2;
+  }
+  .card:nth-child(3) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  .card:nth-child(4) {
+    grid-column: 3/5;
+    grid-row: 2/3;
+  }
+  .card:nth-child(5) {
+    grid-column: 5/6;
+    grid-row: 2/3;
+  }
+  .row-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    border-radius: var(--metric-radius);
+  }
+  .card {
+    flex-direction: column;
+  }
+  .card-mini > .card-image > img {
+    height: 50px;
+  }
+  .item {
+    order: 2;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  .toggle {
+    display: none;
+  }
+  .search {
+    order: 3;
+    max-width: 300px;
+    min-width: 200px;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 1025px) {
+  img {
+    zoom: 1;
+  }
+  h1,
+  h2 {
+    font-size: var(--font-size-large);
+  }
+  .profile > img {
+    width: 50px;
+    height: 50px;
   }
   .container {
     display: grid;
@@ -362,15 +529,14 @@ p {
     grid-column: 3/4;
     grid-row: 2/3;
   }
-  .nav-row {
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    place-items: center;
+  .card {
+    flex-direction: column;
   }
+
   .profile > img {
     order: -1;
-    width: 54px;
-    height: 54px;
+    width: 44px;
+    height: 44px;
   }
   .item {
     order: 2;
@@ -384,42 +550,6 @@ p {
   .search {
     order: 3;
     max-width: 300px;
-  }
-}
-@media (min-width: 768px) and (max-width: 968px) {
-  .profile > img {
-    width: 48px;
-    height: 48px;
-  }
-  img {
-    zoom: 1;
-  }
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
-    height: 100vh;
-  }
-
-  .card:nth-child(1) {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-  .card:nth-child(2) {
-    grid-column: 1/3;
-    grid-row: 2/3;
-  }
-  .card:nth-child(3) {
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-  .card:nth-child(4) {
-    grid-column: 3/4;
-    grid-row: 2/3;
-  }
-  .card:nth-child(5) {
-    grid-column: 3/4;
-    grid-row: 1/2;
+    min-width: 200px;
   }
 }
