@@ -104,7 +104,13 @@ wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
 /* Change html base on screen */
-if (window.innerWidth > 480) {
-  $(".wrapper").contents().unwrap();
-  $(".carousel").contents().unwrap();
+function checkWidth() {
+  console.log(window.innerWidth);
+  if (window.innerWidth > 480) {
+    $(".wrapper").contents().unwrap();
+    $(".carousel").contents().unwrap();
+  } else {
+    window.location.reload();
+  }
 }
+window.addEventListener("resize", checkWidth);
