@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>CSS Display</title>
+  </head>
+  <style>
+    :root {
+      --boxshadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+      --metric-box-spacing: 0.5em;
+      --metric-radius: 15px;
+      --color-primary: linear-gradient(
+        to right bottom,
+        #4e4174,
+        #aa569e,
+        #cf5eb0 55%,
+        #9862df,
+        #4f1b92
+      );
+      --font-size-large: 2rem;
+      --font-size-medium: 1.5rem;
+      --font-size-small: 1rem;
+      --font-weight-light: 200;
+      --font-weight-normal: 400;
+      --font-weight-bold: 500;
+      --btn-primary: #5c469c;
+      --btn-secondary: #4f1b92;
+      --btn-tertiary: #9862df;
+      --btn-quaternary: #cf5eb0;
+      --glass-shadow: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.1)
+      );
+      --text-color: #ffffff;
+      --text-color-dark: #000000;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Diphylleia", sans-serif;
+      font-weight: 100;
+      font-size: 16px;
+      color: var(--text-color);
+      background: var(--color-primary);
+    }
+
+    a,
+    ul,
+    li,
+    input {
+      all: unset;
+    }
+    /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+    ul[role="list"],
+    ol[role="list"] {
+      list-style: none;
+    }
+
+    /* Inherit fonts for inputs and buttons */
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+    h1 {
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-large);
+    }
+    h2 {
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-medium);
+    }
+    h3 {
+      font-weight: var(--font-weight-light);
+      opacity: 0.8;
+    }
+    p {
+      font-weight: var(--font-weight-normal);
+      opacity: 0.8;
+    }
+
+    /* Input */
+    input::placeholder {
+      font-weight: 400;
+      opacity: 0.8;
+      color: white;
+    }
+
+    /* LAYOUT */
+    /* Set core body defaults */
+    body {
+      min-height: 100vh;
+      text-rendering: optimizeSpeed;
+      grid-template-areas: "a a a" "b b b" "c c c";
+    }
+    /* Make images easier to work with */
+    img,
+    picture {
+      zoom: 1;
+      display: block;
+      margin: auto;
+
+      height: auto;
+      max-height: 100%;
+
+      width: auto;
+      max-width: 100%;
+      border-radius: var(--metric-radius);
+    }
+    header {
+      grid-area: a;
+      font-size: var(--font-size-medium);
+      font-weight: var(--font-weight-bold);
+    }
+    nav {
+      font-size: var(--font-size-medium);
+    }
+    .profile > img {
+      width: 32px;
+      height: 32px;
+    }
+    .search {
+      flex: 1;
+      border-radius: var(--metric-radius);
+      max-width: 300px;
+      padding: 5px;
+      display: flex;
+    }
+    /* CARD */
+    .card {
+      border-radius: var(--metric-radius);
+      box-shadow: var(--generic-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .row-card {
+      display: flex;
+      flex-direction: row;
+      width: inherit;
+      overflow-x: auto;
+    }
+    .row-card .border {
+      border: solid white 5px;
+      overflow-x: scroll;
+    }
+    .card-mini {
+      display: flex;
+      flex-direction: column;
+      padding: var(--metric-box-spacing);
+      border-radius: var(--metric-radius);
+      box-shadow: var(--generic-shadow);
+
+      /* Scroll */
+      flex: 1 auto;
+      overflow-x: scroll;
+      white-space: nowrap;
+      min-width: 250px;
+      height: 100%;
+    }
+    .card-info {
+      text-align: center;
+    }
+    .card:nth-child(5) > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-info > h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+    .glass-material {
+      background: var(--glass-shadow);
+      z-index: 2;
+      backdrop-filter: blur(2px);
+    }
+    .row-card {
+      gap: 10px;
+    }
+    .container {
+      display: grid;
+      gap: 10px;
+      grid-template-rows: 3fr auto;
+      min-height: 100vh;
+    }
+    .card .row-card {
+      grid-row: 2/3;
+    }
+
+    /* MAIN */
+    .wrapper {
+      width: 100%;
+      justify-content: center;
+      max-width: 1200px;
+      display: flex;
+    }
+    .wrapper i {
+      z-index: 100;
+      top: 50%;
+      height: 44px;
+      width: 44px;
+      line-height: 44px;
+      position: absolute;
+      text-align: center;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease-in-out;
+      border-radius: 50%;
+      background: #000;
+    }
+    .wrapper i:active {
+      transform: translateY(-50%) scale(0.9);
+    }
+
+    .wrapper i:first-child {
+      left: -1px;
+    }
+    .wrapper i:last-child {
+      right: -1px;
+    }
+    .wrapper .carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel.no-transition {
+      scroll-behavior: auto;
+    }
+    .carousel .dragging {
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+    }
+    .carousel .dragging .card {
+      cursor: grab;
+      user-select: none;
+    }
+    .carousel :where(.card, .img) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .carousel .card {
+      scroll-snap-align: start;
+      height: 100%;
+      list-style: none;
+      cursor: pointer;
+      flex-direction: column;
+    }
+  </style>
+
+  <body>
+    <header></header>
+
+    <main class="container">
+      <!-- CARDS -->
+      <div class="wrapper">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <div class="carousel">
+          <div class="card glass-material" draggable="false">
+            <div class="card-title"></div>
+            <div class="card-image">
+              <img src="./image/IconWeatherToday.png" alt="Cloudy" />
+            </div>
+            <div class="card-info">
+              <h1>
+                It’s going to <span style="color: #2ce6ff">Rain</span> today
+              </h1>
+              <h2>C: 31 T:23</h2>
+              <p>Rainning from 17:00 - 20:00</p>
+            </div>
+          </div>
+
+          <!-- CLOCK -->
+          <div class="card glass-material" draggable="false">
+            <div class="card-title"></div>
+            <div class="card-image">
+              <img
+                src="./image/clock.png"
+                alt="Cloudy"
+                style="width: 150px; height: 150px" />
+            </div>
+            <div class="card-info">
+              <h1 style="color: #2ce6ff; justify-self: center">12:00 PM</h1>
+              <h2>Good afternoon,</h2>
+              <h2>
+                remember to bring your
+                <span style="color: #280a81">umbrella </span>.
+              </h2>
+            </div>
+          </div>
+          <!-- CLOCK -->
+
+          <!-- TOMORROW  -->
+          <div class="card glass-material">
+            <div class="card-title"></div>
+            <div class="card-image">
+              <img src="./image/cloudy.png" alt="Cloudy" />
+            </div>
+            <div class="card-info">
+              <h1>
+                Tomorrow will be <span style="color: #faff0f">Windy</span>
+              </h1>
+              <h2>C: 31 T:23</h2>
+              <p>Windy from 6:00 - 12:00</p>
+            </div>
+          </div>
+          <!-- END TOMORROW  -->
+
+          <div class="card">
+            <img src="./image/sampleimgae.png" alt="Cloudy" />
+          </div>
+        </div>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </div>
+      <!-- UV INDEX -->
+      <div class="card row-card">
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/prep.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>Precipitation</h2>
+            <h2>80%</h2>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/wind.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>Wind</h2>
+            <h2>7 mph</h2>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/UV.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>UV Index</h2>
+            <h2>5</h2>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="card-mini glass-material">
+          <div class="card-image">
+            <img src="./image/humid.svg" alt="Icon" />
+          </div>
+          <div class="card-info">
+            <h2>Humidity</h2>
+            <h2>50 %</h2>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+      <!-- END UV INDEX -->
+    </main>
+    <script>
+      const wrapper = document.querySelector(".wrapper");
+      const carousel = document.querySelector(".carousel");
+      const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+      const arrowIcon = document.querySelectorAll(".wrapper i");
+      const carouselCard = [...carousel.children];
+      console.log(carouselCard);
+      let isAutoPlay = true,
+        isDragging = false,
+        startX,
+        startScrollLeft,
+        timeoutId;
+
+      let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+      carousel.classList.add("no-transition");
+      carousel.scrollLeft = carousel.offsetWidth;
+      carousel.classList.remove("no-transition");
+
+      arrowIcon.forEach((icon) => {
+        icon.addEventListener("click", () => {
+          carousel.scrollLeft +=
+            icon.id == "left" ? -firstCardWidth : firstCardWidth;
+        });
+      });
+      const dragStart = (e) => {
+        e.preventDefault();
+        isDragging = true;
+        carousel.classList.add("dragging");
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
+      };
+      const dragging = (e) => {
+        if (!isDragging) return;
+
+        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+      };
+      const dragStop = (e) => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+      };
+
+      const infiniteScroll = () => {
+        if (carousel.scrollLeft === 0) {
+          carousel.classList.add("no-transition");
+          carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+          carousel.classList.remove("no-transition");
+        } else if (
+          Math.ceil(carousel.scrollLeft) ===
+          carousel.scrollWidth - carousel.offsetWidth
+        ) {
+          carousel.classList.add("no-transition");
+          carousel.scrollLeft = carousel.offsetWidth;
+          carousel.classList.remove("no-transition");
+        }
+        clearTimeout(timeoutId);
+        if (!wrapper.matches(":hover")) autoPlay();
+      };
+      const autoPlay = () => {
+        if (window.innerWidth < 500 || !isAutoPlay) return;
+        timeoutId = setTimeout(
+          () => (carousel.scrollLeft += firstCardWidth),
+
+          2500
+        );
+      };
+      autoPlay();
+      carousel.addEventListener("mousedown", dragStart);
+      carousel.addEventListener("mousemove", dragging);
+      document.addEventListener("mouseup", dragStop);
+      carousel.addEventListener("scroll", infiniteScroll);
+      wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+      wrapper.addEventListener("mouseleave", autoPlay);
+    </script>
+  </body>
+</html>

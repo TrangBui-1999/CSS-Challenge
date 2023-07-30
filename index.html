@@ -84,19 +84,65 @@
 
     <main class="container">
       <!-- CARDS -->
+      <div class="wrapper">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <div class="carousel">
+          <div class="card glass-material" draggable="false">
+            <div class="card-title"></div>
+            <div class="card-image">
+              <img src="./image/IconWeatherToday.png" alt="Cloudy" />
+            </div>
+            <div class="card-info">
+              <h1>
+                It’s going to <span style="color: #2ce6ff">Rain</span> today
+              </h1>
+              <h2>C: 31 T:23</h2>
+              <p>Rainning from 17:00 - 20:00</p>
+            </div>
+          </div>
 
-      <div class="card glass-material">
-        <div class="card-title"></div>
-        <div class="card-image">
-          <img src="./image/IconWeatherToday.png" alt="Cloudy" />
+          <!-- CLOCK -->
+          <div class="card glass-material" draggable="false">
+            <div class="card-title"></div>
+            <div class="card-image">
+              <img
+                src="./image/clock.png"
+                alt="Cloudy"
+                style="width: 150px; height: 150px" />
+            </div>
+            <div class="card-info">
+              <h1 style="color: #2ce6ff; justify-self: center">12:00 PM</h1>
+              <h2>Good afternoon,</h2>
+              <h2>
+                remember to bring your
+                <span style="color: #280a81">umbrella </span>.
+              </h2>
+            </div>
+          </div>
+          <!-- CLOCK -->
+
+          <!-- TOMORROW  -->
+          <div class="card glass-material">
+            <div class="card-title"></div>
+            <div class="card-image">
+              <img src="./image/cloudy.png" alt="Cloudy" />
+            </div>
+            <div class="card-info">
+              <h1>
+                Tomorrow will be <span style="color: #faff0f">Windy</span>
+              </h1>
+              <h2>C: 31 T:23</h2>
+              <p>Windy from 6:00 - 12:00</p>
+            </div>
+          </div>
+          <!-- END TOMORROW  -->
+
+          <div class="card">
+            <img src="./image/sampleimgae.png" alt="Cloudy" />
+          </div>
         </div>
-        <div class="card-info">
-          <h1>It’s going to <span style="color: #2ce6ff">Rain</span> today</h1>
-          <h2>C: 31 T:23</h2>
-          <p>Rainning from 17:00 - 20:00</p>
-        </div>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
       </div>
-
       <!-- UV INDEX -->
       <div class="card row-card">
         <div class="card-mini glass-material">
@@ -143,48 +189,8 @@
         <!--  -->
       </div>
       <!-- END UV INDEX -->
-
-      <!-- CLOCK -->
-      <div class="card glass-material">
-        <div class="card-title"></div>
-        <div class="card-image">
-          <img
-            src="./image/clock.png"
-            alt="Cloudy"
-            style="width: 150px; height: 150px" />
-        </div>
-        <div class="card-info">
-          <h1 style="color: #2ce6ff; justify-self: center">12:00 PM</h1>
-          <h2>Good afternoon,</h2>
-          <h2>
-            remember to bring your
-            <span style="color: #280a81">umbrella </span>.
-          </h2>
-        </div>
-      </div>
-      <!-- CLOCK -->
-
-      <!-- TOMORROW  -->
-      <div class="card glass-material">
-        <div class="card-title"></div>
-        <div class="card-image">
-          <img src="./image/cloudy.png" alt="Cloudy" />
-        </div>
-        <div class="card-info">
-          <h1>Tomorrow will be <span style="color: #faff0f">Windy</span></h1>
-          <h2>C: 31 T:23</h2>
-          <p>Windy from 6:00 - 12:00</p>
-        </div>
-      </div>
-      <!-- END TOMORROW  -->
-
-      <div class="card">
-        <img src="./image/sampleimgae.png" alt="Cloudy" />
-      </div>
     </main>
-    <!-- <div class="circle1"></div>
-    <div class="circle2"></div> -->
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
