@@ -114,3 +114,4 @@ function checkWidth() {
   }
 }
 window.addEventListener("resize", checkWidth);
+window.addEventListener("load", checkWidth);
