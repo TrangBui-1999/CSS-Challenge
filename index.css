@@ -179,7 +179,6 @@ footer {
   border-radius: 15px;
 }
 .glass-material {
-  background-color: rgba(255, 255, 255, 0.6);
   background: var(--glass-shadow);
   z-index: 2;
   backdrop-filter: blur(2px);
@@ -253,7 +252,7 @@ button > img {
   transition: 0.5s;
   align-items: center;
   text-align: center;
-  background: var(--glass-shadow);
+  background-color: rgb(255, 255, 255, 0.7);
   border-radius: 15px;
   width: 0;
   box-shadow: var(--glass-shadow);
@@ -271,8 +270,8 @@ button > img {
 }
 div#openMenu {
   z-index: 100;
-  top: 0px;
-  height: 100vh;
+  top: var(--metric-box-spacing);
+  height: inherit;
 }
 
 /* NAV, HEADER */
@@ -518,7 +517,7 @@ p {
     display: none;
   }
   img {
-    zoom: 2;
+    zoom: 1;
   }
   h1,
   h2 {

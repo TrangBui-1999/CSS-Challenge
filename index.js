@@ -1,6 +1,7 @@
 function openNav() {
+  const height = $("body").height() - 15;
   document.getElementById("openMenu").style.width = "370px";
-  document.getElementById("openMenu").style.height = "100vh";
+  document.getElementById("openMenu").style.height = height + "px";
   document.getElementById("openMenu").style.border = "solid white 5px";
 }
 
