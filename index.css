@@ -179,9 +179,11 @@ footer {
   border-radius: 15px;
 }
 .glass-material {
+  background-color: rgba(255, 255, 255, 0.6);
   background: var(--glass-shadow);
   z-index: 2;
   backdrop-filter: blur(2px);
+  /* Add the blur effect */
 }
 
 /* Elements:button, avatar, image in menu-item */
@@ -245,7 +247,7 @@ button > img {
 
 /* Profile User include: Edit, login... */
 .sideNav {
-  left: 15px;
+  left: var(--metric-box-spacing);
   position: absolute;
   overflow: hidden;
   transition: 0.5s;
@@ -268,7 +270,8 @@ button > img {
   right: 25px;
 }
 div#openMenu {
-  top: 15px;
+  z-index: 100;
+  top: 0px;
   height: 100vh;
 }
 
@@ -382,7 +385,7 @@ p {
     display: flex;
   }
   .wrapper i {
-    z-index: 100;
+    z-index: 10;
     top: 50%;
     height: 44px;
     width: 44px;
@@ -391,11 +394,11 @@ p {
     text-align: center;
     transform: translateY(-50%);
     cursor: pointer;
-    color: #fff;
+    color: #d10ea0;
     font-size: 1.5rem;
     transition: transform 0.3s ease-in-out;
     border-radius: 50%;
-    background: #000;
+    background: var(--glass-shadow);
   }
   .wrapper i:active {
     transform: translateY(-50%) scale(0.9);
