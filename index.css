@@ -2,9 +2,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 :root {
-  --boxshadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  --boxshadow: 8px 8px 0.4em rgba(0, 0, 0, 0.25);
   --metric-box-spacing: 0.5em;
-  --metric-radius: 15px;
+  --metric-radius: 8px;
   --color-primary: linear-gradient(
     to right bottom,
     #4e4174,
@@ -24,14 +24,19 @@
   --btn-tertiary: #9862df;
   --btn-quaternary: #cf5eb0;
   --glass-shadow: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.9),
+    to right,
+    rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.1)
   );
   --text-color: #ffffff;
   --text-color-dark: #000000;
   --gap-between-card: 20px;
   --gap-between-card-mini: 15px;
+  --glass-shine: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1)
+  );
 }
 * {
   box-sizing: border-box;
@@ -87,7 +92,7 @@ p {
 input::placeholder {
   font-weight: 400;
   opacity: 0.8;
-  color: white;
+  color: rgb(53, 51, 51);
 }
 
 /* LAYOUT */
@@ -125,6 +130,7 @@ nav {
   height: 32px;
 }
 .search {
+  background-color: aliceblue;
   flex: 1;
   border-radius: var(--metric-radius);
   max-width: 300px;
@@ -147,6 +153,10 @@ nav {
 .nav-row li a {
   display: block;
   padding: 15px 5px;
+}
+.nav-row li a:hover {
+  text-decoration: underline solid white;
+  text-underline-offset: 10px;
 }
 
 .toggle {
@@ -290,11 +300,22 @@ div#openMenu {
 /* CARD */
 .card {
   border-radius: var(--metric-radius);
-  box-shadow: var(--generic-shadow);
+
   display: flex;
   flex-direction: row;
-
   align-items: center;
+}
+.shadow {
+  box-shadow: var(--boxshadow);
+}
+.gradient-border {
+  border-image: linear-gradient(
+    45deg,
+    rgb(249 249 251) 0%,
+    rgb(243 241 241 / 3%) 100%
+  );
+  border-image-slice: 1;
+  border-style: solid;
 }
 
 .card-mini {
@@ -303,7 +324,6 @@ div#openMenu {
   flex-direction: column;
   padding: var(--metric-box-spacing);
   border-radius: var(--metric-radius);
-  box-shadow: var(--generic-shadow);
   justify-content: center;
   place-items: center;
 }
@@ -592,8 +612,8 @@ p {
   .container i {
     display: none;
   }
-  img {
-    zoom: 1;
+  .card-image {
+    width: 100%;
   }
   h1,
   h2 {
