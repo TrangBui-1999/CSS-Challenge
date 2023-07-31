@@ -105,13 +105,17 @@ wrapper.addEventListener("mouseleave", autoPlay);
 
 /* Change html base on screen */
 function checkWidth() {
-  console.log(window.innerWidth);
-  if (window.innerWidth > 480) {
+  const size = window.innerWidth > 480 ? "desktop" : "mobile";
+  if (size === "desktop") {
     $(".wrapper").contents().unwrap();
     $(".carousel").contents().unwrap();
-  } else {
-    window.location.reload();
   }
 }
 window.addEventListener("resize", checkWidth);
 window.addEventListener("load", checkWidth);
+$(window).bind("resize", function (e) {
+  if (window.RT) clearTimeout(window.RT);
+  window.RT = setTimeout(function () {
+    this.location.reload(false); /* false to get page from cache */
+  }, 100);
+});
