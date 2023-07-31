@@ -472,7 +472,6 @@ p {
     grid-template-columns: 1fr auto;
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
-    height: 100vh;
   }
   .row-card {
     display: grid;
@@ -509,6 +508,10 @@ p {
 
   .card-info {
     padding: var(--metric-box-spacing);
+  }
+  .card {
+    flex-direction: column;
+    justify-content: center;
   }
 }
 /* Laptop */
@@ -579,6 +582,10 @@ p {
   .toggle {
     display: none;
   }
+  .card {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 /* Desktop */
 @media screen and (min-width: 1025px) {
@@ -621,6 +628,7 @@ p {
   }
   .card {
     flex-direction: column;
+    justify-content: center;
   }
   .row-card {
     display: grid;
